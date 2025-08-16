@@ -9,7 +9,7 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Basic reset and font styling */
+/* Reset and base styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,7 +30,7 @@ body {
     margin: 0 auto;
 }
 
-/* ------------------- Header Section ------------------- */
+/* ------------------- Header ------------------- */
 .header {
     background-color: var(--secondary-bg);
     padding: 1.5rem 0;
@@ -70,7 +70,7 @@ body {
     color: var(--primary-bg);
 }
 
-/* ------------------- Hero Section ------------------- */
+/* ------------------- Hero ------------------- */
 .hero {
     background-color: var(--primary-bg);
     padding: 8rem 0;
@@ -104,10 +104,10 @@ body {
 
 .btn:hover {
     transform: translateY(-3px);
-    background-color: #798d94; /* A slightly darker shade for hover effect */
+    background-color: #798d94; /* darker shade on hover */
 }
 
-/* ------------------- Products Section ------------------- */
+/* ------------------- Products ------------------- */
 .products-section {
     padding: 4rem 0;
 }
@@ -159,7 +159,7 @@ body {
     font-size: 0.9rem;
     color: var(--text-color-light);
     margin-bottom: 1rem;
-    min-height: 2.5rem; /* Ensures consistent card height */
+    min-height: 2.5rem;
 }
 
 .product-card .price {
@@ -177,14 +177,13 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%;
 }
 
 .product-card .view-details-btn:hover {
-    background-color: #c7d2c3; /* A slightly darker sage green */
+    background-color: #c7d2c3; /* darker sage green */
 }
 
-/* ------------------- Contact Section ------------------- */
+/* ------------------- Contact ------------------- */
 .contact-section {
     background-color: var(--tertiary-bg);
     padding: 4rem 0;
@@ -244,7 +243,7 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #b89286; /* A slightly darker peach */
+    background-color: #b89286; /* darker peach */
 }
 
 #form-message {
@@ -254,7 +253,7 @@ body {
     text-align: center;
 }
 
-/* ------------------- Footer Section ------------------- */
+/* ------------------- Footer ------------------- */
 .footer {
     background-color: var(--primary-bg);
     color: var(--text-color-dark);
@@ -285,7 +284,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* Optional Scroll-to-top button */
+/* Scroll to top button */
 #scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -303,38 +302,52 @@ body {
     transition: opacity 0.3s ease;
     z-index: 1000;
 }
-
 #scroll-to-top:hover {
     opacity: 1;
 }
 
-/* ------------------- Responsive Design ------------------- */
-/* Media queries for smaller screens (tablets) */
+/* --------- Responsive Design --------- */
+/* Medium screens (tablets) */
 @media (max-width: 768px) {
+    /* Navigation */
     .navbar {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
     }
     .nav-links {
         gap: 1.5rem;
         justify-content: center;
+        flex-wrap: wrap;
     }
+    /* Hero text */
     .hero h1 {
         font-size: 2.5rem;
     }
     .hero p {
         font-size: 1.1rem;
     }
+    /* Sections */
     .section-title {
         font-size: 1.8rem;
     }
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     .footer-content {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+    }
+    /* Products grid */
+    .products-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-/* Media queries for mobile phones */
+/* Small screens (mobiles) */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
@@ -342,10 +355,9 @@ body {
     .hero p {
         font-size: 1rem;
     }
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
+    /* Adjust buttons if needed */
     .btn {
-        padding: 0.75rem 2rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
